@@ -3,7 +3,13 @@ class Node:
     self.data = data
     self.next = None
 
-def enqueue(self, data) -> None:
+
+class Queue:
+  def __init__(self):
+    self.head = None
+    self.last = None
+
+  def enqueue(self, data) -> None:
         new = Node(data)
         if self.last is not None:
             self.last.next = new
@@ -24,6 +30,7 @@ def enqueue(self, data) -> None:
           current = current.next
         print("None")
 
+
 # Do not change the following code
 queue = Queue()
 operations = []
@@ -33,6 +40,10 @@ input_data = input()
 data = input_data.split(',')
 for i in range(len(operations)):
   if operations[i] == "enqueue":
+    queue.enqueue(int(data[i]))
+  elif operations[i] == "dequeue":
+    queue.dequeue()
+queue.status()
     queue.enqueue(int(data[i]))
   elif operations[i] == "dequeue":
     queue.dequeue()
